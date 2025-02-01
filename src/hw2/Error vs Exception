@@ -1,0 +1,15 @@
+Error:
+
+Represents serious, external issues .
+Not recoverable by the program.
+Indicates a failure in the system or environment.
+
+
+
+
+Exception:
+
+
+Represents problems that can occur during normal program execution.
+Can be handled by the program using try-catch.
+Typically caused by bugs or   invalid operations.

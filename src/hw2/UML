@@ -1,0 +1,26 @@
+Student:
+--------------
++ name: String
++ age: int
++ major: String
+- gpa: double
+
+Student(name: String, age: int, major: String, gpa: double)
+study(): void
+addgrade(grade: int): void
+isSuccessful(): void
+
+
+
+
+
+
+StudentManagement:
+----------------------
++ students: Student[]
++ count: int
+
+StudentManagement(maxstudents: int)
+addStudent(name: String, age: int, major: String, gpa: double): void
+removeStudent(name: String): void
+displayStudents(): void

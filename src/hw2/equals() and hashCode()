@@ -1,0 +1,17 @@
+The equals() method checks if two objects are logically equal.
+
+It must be:
+-reflexive (an object is equal to itself);
+-symmetric (if one object equals another, the second must equal the first);
+-transitive (if one object equals a second and the second equals a third, the first must equal the third);
+-consistent (the result should be the same for repeated comparisons);
+
+must return false when compared to null.
+
+
+-------------------------------------------------------------------------------------------------
+
+
+The hashCode() method generates a numerical value (hash code) for an object. If two objects are equal according to the equals() method, they must have the same hash code.
+However, two objects that are not equal can still have the same hash code (though it’s unlikely).
+
