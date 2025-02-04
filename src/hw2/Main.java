@@ -1,3 +1,4 @@
+//Ctrl Shift  K ---> to push github
 package hw2;
 
 public class Main {
