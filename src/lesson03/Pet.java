@@ -1,4 +1,4 @@
-package lesson03;
+/*package lesson03;
 
 import hw2.Student;
 
@@ -41,4 +41,4 @@ public class Pet {
 
 
 
-}
+}*/

@@ -1,5 +1,4 @@
-package lesson03;
-pac
+/*package lesson03;
 
 public class Human {
 
@@ -45,3 +44,4 @@ public class Human {
 
 
 }
+*/
