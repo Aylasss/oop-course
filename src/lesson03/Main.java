@@ -7,8 +7,20 @@ public class Main {
         Human mother = new Human("Jane", "Black", 1955);
         Human father = new Human("Vito", "Black", 1950);
 
-        Human child = new Human("Michael", "Black", 1977, 90, pet, mother, father,
-                new String[][]{{"Monday", "Gym"}, {"Tuesday", "Reading"}});
+
+
+        //schedule:
+        String[][] schedule = {
+                {"Monday", "Gym"},
+                {"Tuesday", "Reading"},
+                {"Wednesday", "Swimming"},
+                {"Thursday", "Working on the project"},
+                {"Friday", "Gaming"},
+                {"Saturday", "Hiking"},
+                {"Sunday", "Relaxing"}};
+
+
+        Human child = new Human("Michael", "Black", 1977, 90, pet, mother, father, schedule);
 
 
         System.out.println(mother);

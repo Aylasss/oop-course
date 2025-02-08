@@ -2,13 +2,16 @@ package lesson03;
 import java.util.Arrays;
 
 public class Pet {
-    private String species;
-    private String nickname;
-    private int age;
-    private int trickLevel; // 1-100
-    private String[] habits;
+
+    public String species;
+    public String nickname;
+    public int age;
+    public int trickLevel; // 1-100
+    public String[] habits;
+
 
     // Constructors:
+
     public Pet() {}
 
     public Pet(String species, String nickname) {
@@ -24,7 +27,10 @@ public class Pet {
         this.habits = habits;
     }
 
+
+
     // Methods:
+
     public void eat() {
         System.out.println("I'm eating");
     }
@@ -38,21 +44,28 @@ public class Pet {
     }
 
 
-
+    //toString:
     @Override
     public String toString() {
-        return species + "{nickname='" + nickname + "', age=" + age +
-                ", trickLevel=" + trickLevel + ", habits=" + Arrays.toString(habits) + "}";
+        return species + "{nickname='" + nickname + "', age=" + age + ", trickLevel=" + trickLevel + ", habits=" + Arrays.toString(habits) + "}";
     }
 
-    // Getters and Setters (optional, but useful for encapsulation)
+
+
+    // I added getters & setters:
+
+
     public String getNickname() {
         return nickname;
+
+
     }
+
 
     public String getSpecies() {
         return species;
     }
+
 
     public int getTrickLevel() {
         return trickLevel;
