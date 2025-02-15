@@ -54,13 +54,16 @@ public class Family {
             children = newChildren;
             System.out.println("The child is deleted successfully!");
             }
+        else {
             System.out.println("Invalid input for index");
+        }
         }
 
 
 
    //deleting by Human object:
     public void deleteChild(Human child) {
+        boolean flag = false;
         for (int i = 0; i < children.length; i++){
             if (children[i].equals(child)){
                 Human[] newChildren = new Human[children.length-1];
@@ -72,10 +75,12 @@ public class Family {
                 }
                 children = newChildren;
                 System.out.println("This child is deleted successfully");
+                flag = true;
             }
         }
-
-        System.out.println("Invalid input for child");
+        if(!flag) {
+            System.out.println("Invalid input for child");
+        }
     }
 
 

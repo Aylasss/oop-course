@@ -8,11 +8,11 @@ public class Main {
         Human father = new Human("Bob", "Smith", 1977, 85, null, null);
 
         //Creating pet:
-        System.out.println("Creating Pet objects...");
+        System.out.println("\nCreating Pet objects...");
         Pet pet = new Pet("Dog", "Rex", 3, 80, new String[]{"eat", "sleep", "play"});
 
         //Creating family:
-        System.out.println("Creating Human objects...");
+        System.out.println("\nCreating Family objects ...");
         Family family1 = new Family (mother, father, pet);
 
         // Creating Child's Schedule:
@@ -32,8 +32,9 @@ public class Main {
 
 
         // Adding childs:
+        System.out.println("\nADDING CHILD...");
         family1.addChild(child1);
-        family1.addChild(child1);
+        family1.addChild(child2);
 
 
 
@@ -41,6 +42,7 @@ public class Main {
         System.out.println(family1);
 
         // Deleting a child by Human object:
+        System.out.println("\nDELETING CHILD...");
         family1.deleteChild(child2);
         System.out.println("\nAfter deleting: ");
         System.out.println(family1);
