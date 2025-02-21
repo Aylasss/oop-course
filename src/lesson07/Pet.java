@@ -96,7 +96,7 @@ public class Pet {
     //toString:
     @Override
     public String toString() {
-        return species + "{nickname='" + nickname + "', age=" + age + ", trickLevel=" + trickLevel + ", habits=" + Arrays.toString(habits) + "}";
+        return species + " {nickname = '" + nickname + "', age = " + age + ", trickLevel = " + trickLevel + ", habits = " + Arrays.toString(habits) + "}";
     }
 
 

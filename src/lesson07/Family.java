@@ -136,7 +136,7 @@ public class Family {
 
     @Override
     public String toString() {
-        return "Family{" + "mother=" + mother + ";\nfather=" + father + ";\nchildren=" + Arrays.toString(children) + ";\npet=" + pet + '}';
+        return "Family{" + "mother = " + mother + ";\nfather = " + father + ";\nchildren = " + Arrays.toString(children) + ";\npet = " + pet + '}';
     }
 
 

@@ -22,7 +22,7 @@ public enum Species {
     @Override
 
     public String toString () {
-        return name() + "with" + numberOfLegs + "legs, can fly: " + canFly + ", has fur: " + hasFur;
+        return name() + " with " + numberOfLegs + " legs, can fly: " + canFly + ", has fur: " + hasFur;
     }
 
 }
