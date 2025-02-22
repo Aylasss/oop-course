@@ -155,7 +155,7 @@ public class Human {
     }
 
 
-    // equals and hashCode:
+    // equals() and hashCode():
     @Override
     public boolean equals( Object object ){
         if (this == object) return true;
@@ -166,17 +166,15 @@ public class Human {
 
     @Override
     public int hashCode(){
-        return Objects.hash(name, surname);
+        int hash = Objects.hash(name, surname, year, iq, mother, father, pet);
+        hash = 31 * hash + Arrays.deepHashCode(schedule);
+        return hash;
     }
 
 
     // finalize() method:
-
-    @Override
-
     protected void finalize() throws Throwable{
-        System.out.println("Human object is being garbage collected");
-        super.finalize();
+        throw new UnsupportedOperationException("finalize() method is not supported in this class.");
     }
 
 

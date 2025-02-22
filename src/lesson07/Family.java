@@ -1,6 +1,6 @@
 package lesson07;
 
-
+import java.util.Objects;
 import java.util.Arrays;
 
 public class Family {
@@ -142,14 +142,30 @@ public class Family {
 
     //equals and hashcode:
 
+    @Override
+    public boolean equals(Object object) {
+        if(this == object) return true;
+        if(object == null || getClass() != object.getClass()) return false;
+
+        Family family = (Family) object;
+        return mother.equals(family.getMother()) && father.equals(family.getFather()) ;
+    }
+
+
+    @Override
+    public int hashCode(){
+        int hash = Objects.hash(mother, father, pet);
+        hash = 31* hash + Arrays.hashCode(children);
+        return hash;
+
+    }
 
     // finalize() method:
 
     @Override
 
     protected void finalize() throws Throwable {
-        System.out.println("Family object is being garbage collected");
-        super.finalize();
+        throw new UnsupportedOperationException("finalize() method is not supported in this class.");
     }
 
 }

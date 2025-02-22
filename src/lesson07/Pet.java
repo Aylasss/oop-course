@@ -1,5 +1,6 @@
 package lesson07;
 
+import java.util.Objects;
 import java.util.Arrays;
 
 public class Pet {
@@ -99,14 +100,33 @@ public class Pet {
         return species + " {nickname = '" + nickname + "', age = " + age + ", trickLevel = " + trickLevel + ", habits = " + Arrays.toString(habits) + "}";
     }
 
+    //equals() & hashCode():
+
+    @Override
+    public boolean equals(Object object) {
+        if(this == object ) return true;
+        if(object == null || getClass() != object.getClass() ) return false;
+
+        Pet pet =(Pet) object;
+        return age == pet.getAge() && species == pet.getSpecies() && nickname.equals(pet.getNickname());
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = species.hashCode();
+        hash = 31 * hash + nickname.hashCode();
+        hash = 31 * hash + age;
+        return hash;
+    }
+
+
 
     //finalize() method:
 
     @Override
 
     protected void finalize() throws  Throwable{
-        System.out.println("Pet object is being garbage collected");
-        super.finalize();
+        throw new UnsupportedOperationException("finalize() method is not supported in this class.");
     }
 
 
