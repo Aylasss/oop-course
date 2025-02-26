@@ -1,17 +1,17 @@
 package lesson10;
 
-class TV extends Device {
-    TV(String brand) {
+public class TV extends Device {
+    public TV(String brand) {
         super(brand);
     }
 
     @Override
-    void turnOn() {
+    public void turnOn() {
         System.out.println(brand + " TV is powering up.");
     }
 
     @Override
-    void turnOff() {
+    public void turnOff() {
         System.out.println(brand + " TV is turning off.");
     }
 }
