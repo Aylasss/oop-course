@@ -1,4 +1,4 @@
-package lesson;
+package lesson15;
 
     class InsufficientFundsException extends Exception {
     public InsufficientFundsException(String message) {
