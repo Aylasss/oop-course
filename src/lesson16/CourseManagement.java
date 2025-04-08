@@ -116,8 +116,7 @@ public class CourseManagement {
 
 
 
-    private static void saveDataToFiles(List<Student> students, List<Teacher> teachers,
-                                        List<Course> courses, List<Exam> exams) throws Exception {
+    private static void saveDataToFiles(List<Student> students, List<Teacher> teachers, List<Course> courses, List<Exam> exams) throws Exception {
         mapper.writeValue(new File("students.json"), students);
         mapper.writeValue(new File("teachers.json"), teachers);
         mapper.writeValue(new File("courses.json"), courses);
