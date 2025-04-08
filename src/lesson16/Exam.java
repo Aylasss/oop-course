@@ -6,19 +6,19 @@ import java.util.List;
 import java.util.Map;
 
 public class Exam implements Gradable{
-    private String examId;
-    private Course course;
-    private double maxScore = 0;
-    private Map<Student, Double> scores = new HashMap<>();
+    public String examId;
+    public Course course;
+    public double maxScore = 0;
+    public Map<Student, Double> scores = new HashMap<>();
 
-    public Exam(String examId, Course course, double maxScore) {
+    public Exam(String examId, Course course) {
         this.examId = examId;
         this.course = course;
     }
 
     @Override
     public void recordScore(Student student, double score){
-        if (!course.getEnrolledStudents().contains(student)) {
+        if (!course.contains(student)) {
             throw new IllegalArgumentException("Student not enrolled in course");
         }
         if (score < 0 || score > 100) {
@@ -59,8 +59,11 @@ public class Exam implements Gradable{
         return topStudents;
 
     }
+
+
+
 }
 
 
-}
+
 

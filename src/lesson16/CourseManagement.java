@@ -1,5 +1,6 @@
 package lesson16;
 
+import java.io.File;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -31,23 +32,22 @@ public class CourseManagement {
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
         }
-
     }
 
     private static List<Student> createStudents() {
         List<Student> students = new ArrayList<>();
-        students.add(new Student("A6GDW2", "Əli", "Əliyev", LocalDate.of(2004, 4, 16)));
-        students.add(new Student("S2EV3H", "Ayşə", "Həsənova", LocalDate.of(2006, 9, 23)));
-        students.add(new Student("8JDCE7", "Gülnur", "Məmmədzadə", LocalDate.of(2001, 8, 2)));
-        students.add(new Student("W1BZQ8", "Nihad", "Quliyev", LocalDate.of(2005, 3, 14)));
-        students.add(new Student("BSZ82V", "Huseyn", "Nebiyev", LocalDate.of(2006, 5, 7)));
+        students.add(new Student("A6GDW2", "Əli", "Əliyev"));
+        students.add(new Student("S2EV3H", "Ayşə", "Həsənova"));
+        students.add(new Student("8JDCE7", "Gülnur", "Məmmədzadə"));
+        students.add(new Student("W1BZQ8", "Nihad", "Quliyev"));
+        students.add(new Student("BSZ82V", "Huseyn", "Nebiyev"));
         return students;
     }
 
     private static List<Teacher> createTeachers() {
         List<Teacher> teachers = new ArrayList<>();
-        teachers.add(new Teacher("T2GX1T", "Prof. Kamil", "Əlizadə", LocalDate.of(1979, 6, 22), "Mathemathics"));
-        teachers.add(new Teacher("7HSJ6S", "Prof. John", "Smith", LocalDate.of(1980, 12, 7), "Computer Science"));
+        teachers.add(new Teacher("T2GX1T", "Prof. Kamil", "Əlizadə", "Mathematics"));
+        teachers.add(new Teacher("7HSJ6S", "Prof. John", "Smith", "Computer Science"));
         return teachers;
     }
 
@@ -75,11 +75,11 @@ public class CourseManagement {
         Random random = new Random();
 
         for (Course course : courses) {
-            Exam exam = new Exam("E" + course.courseId, course);
+            Exam exam = new Exam("EX" + course.courseId, course);
             exams.add(exam);
 
-            for (Student student : course.getEnrolledStudents()) {
-                double score = 50 + random.nextInt(51); // Grades between 50-100
+            for (Student student : course.enrolledStudents) {
+                double score = 50 + random.nextInt(51);
                 exam.recordScore(student, score);
             }
         }

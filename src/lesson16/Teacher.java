@@ -1,14 +1,18 @@
 package lesson16;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Teacher extends Human implements Teachable{
-    private String department;
-    private List<Course> coursesTaught = new ArrayList<>();
+    public String department;
+    @JsonIgnore
+    public List<Course> coursesTaught = new ArrayList<>();
 
-    public Teacher(String id, String name, String surname, LocalDate birthDate, String department){
-        super(id, name, surname, birthDate);
+    public Teacher(String id, String name, String surname, String department){
+        super(id, name, surname);
         this.department = department;
     }
 

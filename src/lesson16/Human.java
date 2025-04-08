@@ -3,17 +3,15 @@ package lesson16;
 import java.time.LocalDate;
 
 public abstract class Human {
-    protected String id;
-    protected String name;
-    protected String surname;
-    protected LocalDate birthDate;
+    public String id;
+    public String name;
+    public String surname;
 
 
-    public Human (String id, String name, String surname, LocalDate birthDate) {
+    public Human (String id, String name, String surname) {
         this.id = id;
         this.name = name;
         this.surname = surname;
-        this.birthDate = birthDate;
     }
 
 }
