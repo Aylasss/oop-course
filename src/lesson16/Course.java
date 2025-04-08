@@ -10,6 +10,8 @@ public class Course {
     public String courseName;
     @JsonIgnore
     public Teacher teacher;
+
+    @JsonIgnore
     public List<Student> enrolledStudents = new ArrayList<>();
 
     public Course(String courseId, String courseName) {
@@ -20,7 +22,10 @@ public class Course {
 
     //methods
     public void enrollStudent(Student student) {
-        enrolledStudents.add(student);
+        if (!enrolledStudents.contains(student)) {
+            enrolledStudents.add(student);
+        }
+
     }
 
     public boolean contains(Student student) {
@@ -30,5 +35,6 @@ public class Course {
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
     }
+
 
 }

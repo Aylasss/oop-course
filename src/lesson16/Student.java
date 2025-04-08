@@ -1,5 +1,7 @@
 package lesson16;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,7 +9,9 @@ import java.util.List;
 import java.util.Map;
 
 public class Student extends Human {
+    @JsonIgnore
     public List<Course> enrolledCourses = new ArrayList<>();
+    @JsonIgnore
     public Map<Course, Double> grades = new HashMap<>();
 
 
@@ -17,7 +21,10 @@ public class Student extends Human {
 
     //methods
     public void enrollInCourse(Course course){
-        enrolledCourses.add(course);
+        if (!enrolledCourses.contains(course)) {
+            enrolledCourses.add(course);
+            course.enrollStudent(this);
+        }
     }
 
     public void receiveGrade(Course course, double grade){

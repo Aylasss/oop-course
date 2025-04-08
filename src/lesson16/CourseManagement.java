@@ -67,6 +67,7 @@ public class CourseManagement {
             for (Course course : courses) {
                 student.enrollInCourse(course);
             }
+
         }
     }
 
@@ -75,14 +76,24 @@ public class CourseManagement {
         Random random = new Random();
 
         for (Course course : courses) {
+            if (course.enrolledStudents.isEmpty()) {
+                System.out.println("No students enrolled in " + course.courseName);
+                continue;
+
+            }
+
             Exam exam = new Exam("EX" + course.courseId, course);
             exams.add(exam);
 
             for (Student student : course.enrolledStudents) {
+
                 double score = 50 + random.nextInt(51);
                 exam.recordScore(student, score);
+                student.receiveGrade(course, score);
             }
+
         }
+
         return exams;
     }
 
@@ -100,7 +111,10 @@ public class CourseManagement {
             }
             System.out.println();
         }
+
     }
+
+
 
     private static void saveDataToFiles(List<Student> students, List<Teacher> teachers,
                                         List<Course> courses, List<Exam> exams) throws Exception {
@@ -108,5 +122,7 @@ public class CourseManagement {
         mapper.writeValue(new File("teachers.json"), teachers);
         mapper.writeValue(new File("courses.json"), courses);
         mapper.writeValue(new File("exams.json"), exams);
+
     }
+
 }
